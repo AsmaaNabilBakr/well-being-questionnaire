@@ -1,0 +1,20 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "question": "How was your Week overall?",
+      "options": ["Good", "Not Sure", "Bad"]
+    },
+    {
+      "id": "2",
+      "question": "How was the weather?",
+      "options": ["Good", "Not Sure", "Bad"]
+    },
+    {
+      "id": "3",
+      "question": "How was your productivity?",
+      "options": ["Good", "Not Sure", "Bad"]
+    }
+  ],
+  "answers": []
+}

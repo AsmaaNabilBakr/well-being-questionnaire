@@ -1,38 +1,134 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: flex;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: absolute;
+  padding: 40px;
+  color: white;
+  z-index: 1;
+}
+
+.left-side {
+  background: #6757be;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transition: width 1s ease;
+  &.submit-phase {
+    width: 5%;
+  }
+}
+.dots {
+  justify-content: center;
+  color: black;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: 5%;
+  z-index: 1;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .dot {
+    margin-bottom: 13%;
+    border: 2px solid #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    &.active {
+      background: transparent;
+    }
   }
-  to {
-    transform: rotate(360deg);
+}
+.page-container {
+  display: flex;
+  width: calc(100vw - 5%);
+  height: 100vh;
+  .question-container {
+    width: inherit;
+    display: flex;
+    align-items: center;
+    .question {
+      width: 45%;
+      z-index: 1;
+      height: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        width: 55%;
+        font-size: 89px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+    .options {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .option {
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        transition: opacity 0.6s ease;
+        width: 20%;
+        img {
+          width: 40%;
+          margin-bottom: 3%;
+        }
+        .title {
+          display: none;
+          transition: display 0.6s;
+        }
+
+        &:hover {
+          .title {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.submit-page {
+  width: calc(100vw - 5%);
+  padding: 63px;
+  .page-title {
+    display: block;
+    font-size: 61px;
+    font-weight: bold;
+    width: 35%;
+    margin-bottom: 3%;
+  }
+  .answer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    width: 60%;
+    height: 17%;
+    border-bottom: 1px solid #e5e5e5;
+    div {
+      font-size: 33px;
+      font-weight: 400;
+    }
+    img {
+      width: 7%;
+    }
+  }
+  button {
+    background: #6757be !important;
+    margin-top: 3%;
+    box-shadow: none;
+    z-index: -1;
   }
 }
